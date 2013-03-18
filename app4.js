@@ -38,13 +38,13 @@ app.get('/', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-    function onVerifyResp(bidRes) {
+    function onVerifyResp(verifierRes) {
       var data = "";
-      bidRes.on('data', function (chunk) {
+      verifierRes.on('data', function (chunk) {
         data += chunk;
       });
 
-      bidRes.on('end', function () {
+      verifierRes.on('end', function () {
         var verified = JSON.parse(data);
         if ('okay' == verified.status) {
           req.session.user = verified.email;
