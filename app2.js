@@ -8,15 +8,15 @@ app.configure(function () {
 
 app.get('/', function (req, res) {
   if (req.session.user) {
-    res.send('<h1>Hi ' + req.session.user + '</h1><p>Welcome to the future of socialisation on the Web.</p><p><b>-The Socializr 3000 team</b></p><p><a href="/logout">Logout</a></p>');
+    res.send('<h1>Hi ' + req.session.user + '</h1><p>Welcome to the future!<p>a href="/logout">Logout</a>');
   }
   else {
-    res.send('<h1>Socializr 3000</h1><p><b>VIP-only area</b></p><p><a href="/login">Login</a></p>');
+    res.send('<h1>Socializr 3000</h1><p><a href="/login">Login</a>');
   }
 });
 
 app.get('/login', function (req, res) {
-  req.session.user = 'francois@mozilla.com';
+  req.session.user = 'shout@ozten.com';
   res.redirect('/');
 });
 
