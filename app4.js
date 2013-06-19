@@ -16,10 +16,10 @@ app.get('/', function (req, res) {
   var loggedInUser = 'null';
   if (req.session.user) {
     loggedInUser = '"' + req.session.user + '"';
-    body += '<h1>Hi ' + req.session.user + '</h1><p>Welcome to the future of socialisation on the Web.</p><p><b>-The Socializr 3000 team</b></p><p><a href="javascript:navigator.id.logout()">Logout</a></p>';
+    body += '<h1>Hi ' + req.session.user + '</h1><p>Welcome to the future!<p><a href="javascript:navigator.id.logout()">Logout</a>';
   }
   else {
-    body += '<h1>Socializr 3000</h1><p><b>VIP-only area</b></p><p><a href="javascript:navigator.id.request()">Login</a></p>';
+    body += '<h1>Socializr 3000</h1><p><a href="javascript:navigator.id.request()">Login</a>';
   }
   body += '<script>navigator.id.watch({'
     + 'loggedInUser: ' +  loggedInUser + ','
