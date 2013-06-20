@@ -21,3 +21,18 @@ app.configure(function () {
     }, onVerifyResp);
     request.write(body);
     request.end();
+
+
+    function onVerifyResp(verifierRes) {
+      var data = "";
+      verifierRes.on('data', function (chunk) {
+        data += chunk;
+      });
+
+      verifierRes.on('end', function () {
+
+
+
+      });
+    };
+
